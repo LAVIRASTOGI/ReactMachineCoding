@@ -1,0 +1,25 @@
+.mainComponent{
+    display: flex;
+    gap:1rem;
+    justify-content: space-around;
+    margin:4rem;
+}
+.mainComponent img{
+   width: 40%;
+   height:40%;
+   border-radius: 1rem;
+   object-fit: contain;
+}
+.mainComponent .DescriptionComponent{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex-basis: 45rem;
+    align-self: center;
+}
+.mainComponent .DescriptionComponent h1{
+    font-size: 6rem;
+}
+.mainComponent .DescriptionComponent h2{
+    font-size: 3rem;
+}

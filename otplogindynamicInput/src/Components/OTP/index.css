@@ -1,0 +1,18 @@
+.mainContainerOtp{
+    display: grid;
+}
+.mainContainerOtp h1{
+    text-align: center;
+    margin: 1rem 0px;
+}
+.otpContainer{
+    display: flex;
+    gap: 1rem;
+    justify-self: center;
+}
+
+.otpContainer input{
+    width: 40px;
+    height: 30px;
+    font-size: 1.2rem;
+}
