@@ -1,15 +1,3 @@
-body{
-  background-color: white;
-  color: black;
-}
-
-
-[data-theme="dark"] {
-  background-color: black;
-  color: white;
-}
-
-
 
 body {
   margin: 0;

@@ -1,4 +1,4 @@
-import "./App.css";
+
 import DataComponent from "./Components/DataComponent";
 
 function App() {
