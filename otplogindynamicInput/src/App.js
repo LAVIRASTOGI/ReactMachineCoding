@@ -4,7 +4,7 @@ import DataComponent from "./Components/DataComponent";
 function App() {
   return (
       <div className="App" >
-        {/* <DataComponent/> */}
+        <DataComponent/>
       </div>
     
   );

@@ -6,7 +6,7 @@ function OTPLogin(props) {
   );
 
   useEffect(() => {
-    inputRefs.current[0].focus();
+    inputRefs?.current[0]?.focus();
   }, []);
   const inputRefs = useRef([]);
 
@@ -25,21 +25,21 @@ function OTPLogin(props) {
   };
 
   const keyDownHandler = (e,index) => {
-        if(e.key=='Backspace' && index>0 && !otpArray[index]&& inputRefs.current[index - 1]){
+        if(e.key=='Backspace' && index>0 &&inputRefs.current[index - 1]){
             inputRefs.current[index - 1].focus();
         }
     
   };
   return (
     <>
-      <div className="mainContainerOtp">
-        <h1>OTP LOGIN</h1>
+      
         <div className="otpContainer">
           {otpArray.map((ele, index) => {
             return (
               <input
                 type="text"
                 key={index}
+                name={index}
                 value={otpArray[index]}
                 ref={(e) => (inputRefs.current[index] = e)}
                 onKeyUp={(e)=>keyDownHandler(e,index)}
@@ -48,7 +48,6 @@ function OTPLogin(props) {
             );
           })}
         </div>
-      </div>
     </>
   );
 }
