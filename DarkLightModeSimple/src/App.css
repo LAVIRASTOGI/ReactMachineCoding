@@ -153,8 +153,9 @@
   }
 }
 .toggleSwitchContainer{
-  width: 20%;
-  margin-left: auto;
+  /* width: 20%;
+  margin-left: auto; */
+  margin-right: 2rem;
   display: flex;
     align-items: center;
 }

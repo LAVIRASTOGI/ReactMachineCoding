@@ -1,30 +1,30 @@
-.navContainer{
-    display: flex;
+.navContainer {
+  display: flex;
   border-bottom: 1px solid grey;
   align-items: center;
+  justify-content: space-between;
 }
-.navBarData{
-    margin-left: 2rem;
-    /* margin-top: 0.4rem; */
+.navBarData {
+  margin-left: 2rem;
+  /* margin-top: 0.4rem; */
 }
-.navBarData .active{
-    color: #FFA500
+.navBarData .active {
+  color: #ffa500;
 }
 
 .navBarData ul {
-    display: flex;
-    gap: 10px;
-    
+  display: flex;
+  gap: 10px;
 }
 .navBarData li a {
-    display: block;
-    text-align: center;
-    font-size: 1.2rem;
-    padding: 14px 16px;
-    text-decoration: none;
-    color: inherit;
- }
- 
- .navBarData li a:hover {
-     color: blue;
-  }
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navBarData li a:hover {
+  color: blue;
+}
