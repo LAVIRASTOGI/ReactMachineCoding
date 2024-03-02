@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import './counter.css'
 
 function Counter() {
-  const [counter, setCounter] = useState(0);
+const [counter,setCounter] =useState(0);
+const incrementHandler=(diffrence)=>{
+  setCounter(prev=>prev+diffrence)
 
-  const incrementHandler = () => {
-    setCounter((counter) => counter + 1);
-  };
-  const decrementHandler = () => {
-    setCounter((counter) => counter - 1);
-  };
+}
+const decrementHandler=(diffrence)=>{
+  setCounter(prev=>prev-diffrence)
+}
   return (
     <>
       <div className="counterContainer">
       <h1>Counter:{counter}</h1>
       <div className="buttonContainer">
-      <button onClick={incrementHandler}>+</button>
-      <button onClick={decrementHandler}>-</button>
+      <button onClick={()=>incrementHandler(2)}>+</button>
+      <button onClick={()=>decrementHandler(2)}>-</button>
       </div>
      
     </div>

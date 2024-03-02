@@ -1,12 +1,12 @@
 import { render } from "@testing-library/react";
 import App from "../App";
 
-test('counter component renders', () => {
-    const { getByText } = render(<App />);
+test('app component renders', () => {
+    const screen = render(<App />);
     
-    const incrementButton = getByText('+');
-    const decrementButton = getByText('-');
-    const counterDisplay = getByText(/Counter:/i);
+    const incrementButton = screen.getByText('+');
+    const decrementButton = screen.getByText('-');
+    const counterDisplay = screen.getByText(/Counter:/i);
   
     expect(incrementButton).toBeInTheDocument();
     expect(decrementButton).toBeInTheDocument();

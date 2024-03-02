@@ -27,7 +27,7 @@ test('counter increments when the button is clicked', () => {
   
     // Test increment
     fireEvent.click(incrementButton);
-    expect(counterDisplay.textContent).toBe('Counter:1');
+    expect(counterDisplay.textContent).toBe('Counter:2');
   
   });
   test('counter decrements when the button is clicked', () => {
@@ -39,5 +39,16 @@ test('counter increments when the button is clicked', () => {
   
     // Test decrement
     fireEvent.click(decrementButton);
-    expect(counterDisplay.textContent).toBe('Counter:-1');
+    expect(counterDisplay.textContent).toBe('Counter:-2');
+  });
+  test('counter increment and decrements when the button is clicked', () => {
+    const { getByText } = render(<Counter />);
+    const incrementButton = getByText('+');
+    const decrementButton = getByText('-');
+    const counterDisplay = getByText(/Counter:/i);
+  
+  
+    fireEvent.click(incrementButton);
+    fireEvent.click(decrementButton);
+    expect(counterDisplay.textContent).toBe('Counter:0');
   });
