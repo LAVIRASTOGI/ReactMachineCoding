@@ -3,7 +3,6 @@ import App from "../App"
 
 test('app component renders without crashing',()=>{
     render(<App/>)
-    
 })
 test('stopwatch component renders',()=>{
     render(<App/>)
