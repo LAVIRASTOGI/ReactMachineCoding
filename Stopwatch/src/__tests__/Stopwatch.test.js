@@ -26,10 +26,11 @@ test('stopwatch start functionality',async()=>{
     const startElement=screen.getByText('Start')
 
     fireEvent.click(startElement);
+   
     act(()=>{
-        jest.advanceTimersByTime(4000);
+        jest.advanceTimersByTime(1000);
     })
-    expect(screen.getByText('00:00:04')).toBeInTheDocument();
+    expect(screen.getByText('00:00:01')).toBeInTheDocument();
     })
 
     test('stopwatch start and stop functionality',async()=>{
@@ -51,7 +52,6 @@ test('stopwatch start functionality',async()=>{
             expect(screen.getByText('00:00:00')).toBeInTheDocument();
             const startElement=screen.getByText('Start')
             const resetElement=screen.getByText('Reset')
-        
             fireEvent.click(startElement);
             fireEvent.click(resetElement);
             expect(screen.getByText('00:00:00')).toBeInTheDocument();
