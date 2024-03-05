@@ -19,12 +19,8 @@ ul {
   padding: 0;
   overflow: hidden;
 }
-.shape {
-  height: 80vh;
-  width: 50vw;
-  border-bottom: 10px solid red;
-  border-right: 10px solid red;
-  -moz-transform: skew(-45deg);
-  -webkit-transform: skew(-45deg);
-  transform: skew(-30deg);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
