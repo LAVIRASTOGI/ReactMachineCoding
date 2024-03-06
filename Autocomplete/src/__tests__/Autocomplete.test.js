@@ -13,7 +13,7 @@ test('renders without crashing', () => {
   });
 
   test('ResultContainer is rendered when there are filtered results', async () => {
-    render(<Autocomplete options={[{productName: 'Test Product'}]} />);
+    render(<Autocomplete options={[{productName: 'Test Product', image: 'test-image.jpg'}]} />);
     const input = screen.getByPlaceholderText('Type something...');
     fireEvent.change(input, { target: { value: 'Test' } });
     const item = await screen.findByText('Test Product');
@@ -29,7 +29,7 @@ test('renders without crashing', () => {
   });
 
   test('ResultContainer change Event tiggred', async() => {
-    render(<Autocomplete options={[{productName: 'Test Product'}]} />);
+    render(<Autocomplete options={[{productName: 'Test Product', image: 'test-image.jpg'}]} />);
     const input = screen.getByPlaceholderText('Type something...');
     fireEvent.change(input, { target: { value: 'test' } });
     const resultContainerItem = await screen.findByText('Test Product');
@@ -38,12 +38,10 @@ test('renders without crashing', () => {
   });
 
   test('ResultContainer change Event tiggred and filteredData length is empty', async() => {
-    render(<Autocomplete options={[{productName: 'Test Product'}]} />);
+    render(<Autocomplete options={[{productName: 'Test Product', image: 'test-image.jpg'}]} />);
     const input = screen.getByPlaceholderText('Type something...');
     fireEvent.change(input, { target: { value: 'test' } });
     const resultContainerItem = await screen.findByText('Test Product');
     fireEvent.click(resultContainerItem);
-    const resultContainer = screen.queryByText('Test Product');
-    expect(resultContainer).toBeNull();
-
+    expect(screen.getByAltText('Test Product')).toHaveAttribute('src', 'test-image.jpg');
   });

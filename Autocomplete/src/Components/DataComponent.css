@@ -1,0 +1,13 @@
+.DataComponent{
+    width: 40%;
+    padding: 6rem 0 0 4rem;
+    font-size: 2rem;
+}
+.DataComponent h1{
+    color: #ffff;
+   
+   }
+
+   .DataComponent span{
+    color: #F6EB03;
+   }
