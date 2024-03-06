@@ -1,19 +1,28 @@
-.displayComponentContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    font-size: 1.4rem;
+.displayComponentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  font-size: 14px;
 }
 
-.displayComponentContainer div{
+.displayComponentContainer div {
+  width: 150px;
+  height: 150px;
+}
+.displayComponentContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .displayComponentContainer {
+    font-size: 1.4rem;
+  }
+
+  .displayComponentContainer div {
     width: 350px;
     height: 350px;
+  }
 }
-.displayComponentContainer img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover
-}
-
-

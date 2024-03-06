@@ -7,14 +7,14 @@ main {
     flex-direction: column;
     padding: 2em 0;
     width: 50%;
-    padding-top: 7rem;
+    padding-top: 1rem;
     margin: 1rem;
   }
   input {
     border: none;
     box-shadow: 0px 7px 9px 0px #a7a6a633;
     color: #555555;
-    font-size: 1.5rem;
+    font-size: 14px;
     outline: none;
     padding: 0.4em 2em;
     width: 60%;
@@ -36,7 +36,7 @@ main {
     color: #555555;
     cursor: pointer;
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 14px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     list-style: none;
     padding: 0.6em 1em;
@@ -68,3 +68,30 @@ main {
     }
   }
   
+  @media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    main {
+      padding-top: 7rem;
+    }
+    input {
+      font-size: 1.5rem;
+    }
+   
+    
+    .item {
+     
+      font-size: 1.5rem;
+    }
+   
+    
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+}

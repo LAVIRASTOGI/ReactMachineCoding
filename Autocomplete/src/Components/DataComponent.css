@@ -1,13 +1,20 @@
-.DataComponent{
-    width: 40%;
+.DataComponent {
+  width: 40%;
+  padding: 2rem 0 0 0px;
+  font-size: 12px;
+}
+.DataComponent h1 {
+  color: #ffff;
+}
+
+.DataComponent span {
+  color: #f6eb03;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .DataComponent {
     padding: 6rem 0 0 4rem;
     font-size: 2rem;
+  }
 }
-.DataComponent h1{
-    color: #ffff;
-   
-   }
 
-   .DataComponent span{
-    color: #F6EB03;
-   }
