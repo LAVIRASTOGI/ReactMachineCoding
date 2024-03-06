@@ -1,10 +1,7 @@
 
-// import { render, screen } from '@testing-library/react';
-// import App from '../App'
+import { render} from '@testing-library/react';
+import App from '../App'
 
-// test('fetches data on mount', () => {
-//   const mockFetch = jest.spyOn(global, 'fetch');
-//   render(<App />);
-//   screen.getByNa
-// //   expect(mockFetch).toHaveBeenCalled();
-// });
+test('renders App without crashing', () => {
+  render(<App />);
+});
