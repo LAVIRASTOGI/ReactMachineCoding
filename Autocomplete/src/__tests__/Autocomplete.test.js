@@ -33,7 +33,7 @@ test('renders without crashing', () => {
     const input = screen.getByPlaceholderText('Type something...');
     fireEvent.change(input, { target: { value: 'test' } });
     const resultContainerItem = await screen.findByText('Test Product');
-    fireEvent.click(resultContainerItem);
+    fireEvent.click(resultContainerItem); 
     expect(input.value).toBe('Test Product');
   });
 

@@ -9,7 +9,6 @@ test('renders product name and image', () => {
   };
 
   render(<DisplayComponent product={product} />);
-
-  expect(screen.getByText('Test Product')).toBeInTheDocument();
+ expect(screen.getByText('Test Product')).toBeInTheDocument();
   expect(screen.getByAltText('Test Product')).toHaveAttribute('src', 'test-image.jpg');
 });

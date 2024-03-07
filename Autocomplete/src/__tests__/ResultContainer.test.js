@@ -20,6 +20,7 @@ import ResultContainer from '../Components/ResultContainer';
 
   });
   test('renders and responds to click events', () => {
+    
     const mockSelectHandler = jest.fn();
     const results = [
       { productName: 'Product 1' , image: 'test-image1.jpg'},
