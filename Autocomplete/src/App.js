@@ -21,10 +21,8 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <div>
         <Autocomplete options={data} />
         <DataComponent />
-      </div>
     </div>
   );
 }
