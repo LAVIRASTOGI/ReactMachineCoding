@@ -7,7 +7,6 @@ test('renders without crashing', () => {
 
 test('renders OTP LOGIN header', () => {
     render(<DataComponent />);
-    screen.debug()
     const linkElement = screen.getByText(/OTP LOGIN/i);
     expect(linkElement).toBeInTheDocument();
   });
@@ -15,7 +14,7 @@ test('renders OTP LOGIN header', () => {
   test('renders OTP input fields', () => {
     render(<DataComponent />);
     const otpInputs = screen.getAllByRole('textbox');
-    expect(otpInputs).toHaveLength(4);
+    expect(otpInputs).toHaveLength(5);
   });
 
   

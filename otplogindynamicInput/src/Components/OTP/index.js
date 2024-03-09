@@ -1,53 +1,52 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./index.css";
-function OTPLogin(props) {
+function OTPLogin({ otpinputfeilds }) {
   const [otpArray, setOtpArray] = useState(
-    props?.inputOtpFeilds ? Array(props?.inputOtpFeilds).fill("") : []
+    otpinputfeilds ? new Array(otpinputfeilds).fill("") : []
   );
-
-  useEffect(() => {
-    inputRefs?.current[0]?.focus();
-  }, []);
-  const inputRefs = useRef([]);
-
-  const otpValueHandler = (e, index) => {
-    let value=e.target.value;
-    if(isNaN(value)){
-        return ;
+ 
+  const ref=useRef([]);
+  useEffect(()=>{
+    if(ref && ref.current && ref.current[0]){
+      ref.current[0].focus()
     }
-    let newArr = [...otpArray];
-    newArr[index] = value.substring(value.length-1);
-    setOtpArray(newArr);
-
-    if (value && index < otpArray.length - 1 && inputRefs.current[index + 1]) {
-      inputRefs.current[index + 1].focus();
+   },[])
+   const keyChangeHandler =(e,index)=>{
+    if(e?.code==='Backspace'&& index>0 ){
+      ref.current[index-1].focus()
     }
-  };
+   }
+  const otpChangeHandler=(e,index)=>{
+   let inputValue=e.target.value;
 
-  const keyDownHandler = (e,index) => {
-        if(e.key=='Backspace' && index>0 &&inputRefs.current[index - 1]){
-            inputRefs.current[index - 1].focus();
-        }
-    
-  };
+   if(isNaN(inputValue)){
+    return;
+   }
+
+   let newOtpArray=[...otpArray]
+   newOtpArray[index]=inputValue.substring(inputValue.length-1);
+   
+   
+   if(index<otpArray.length-1 && inputValue){
+    ref.current[index+1].focus()
+   }
+   setOtpArray(newOtpArray);
+
+  }
   return (
     <>
-      
-        <div className="otpContainer">
-          {otpArray.map((ele, index) => {
-            return (
-              <input
-                type="text"
-                key={index}
-                name={index}
-                value={otpArray[index]}
-                ref={(e) => (inputRefs.current[index] = e)}
-                onKeyUp={(e)=>keyDownHandler(e,index)}
-                onChange={(e) => otpValueHandler(e, index)}
-              ></input>
-            );
-          })}
-        </div>
+      <div className="otpContainer">
+        {otpArray.map((ele,index) => (
+          <input type="text"
+          name={index}
+          key={index}
+          value={ele}
+          ref={(e)=>ref.current[index]=e}
+          onChange={(e)=>otpChangeHandler(e,index)}
+          onKeyUp={(e)=>keyChangeHandler(e,index)}
+          ></input>
+        ))}
+      </div>
     </>
   );
 }

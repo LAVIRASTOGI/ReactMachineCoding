@@ -6,7 +6,7 @@ function DataComponent() {
     <>
       <div className="mainContainerOtp">
         <h1>OTP LOGIN</h1>
-        <OTPLogin inputOtpFeilds={4}></OTPLogin>
+        <OTPLogin otpinputfeilds={5}></OTPLogin>
       </div>
     </>
   );
