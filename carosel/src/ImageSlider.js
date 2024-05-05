@@ -31,13 +31,13 @@ function ImageSlider() {
         </svg>
       </button>
       <div
-        className=" w-screen h-auto md:w-custom-lg md:h-custom-lg shadow-lg shadow-gray-500"
+        className=" w-screen h-auto md:w-custom-lg md:h-custom-lg shadow-lg shadow-gray-500 relative"
       >
         {images.map((image, index) => (
           <div
             key={index}
-            className={`carousel-item w-full h-full ${
-              index === currentSlide ? "block" : "hidden"
+            className={`carousel-item w-full h-full absolute top-0 left-0 transition-all ease-in-out  ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
             <img
